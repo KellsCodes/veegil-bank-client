@@ -37,6 +37,7 @@ const Signin = ({setUser}) => {
         if(data) {
             setSpinner(false);
             if(data.user) {
+                cookies.set('token', data.token, options);
                 setUser(data.user);
                 set_input_data(initial_values);
                 history.push("/")
