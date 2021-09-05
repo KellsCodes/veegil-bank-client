@@ -30,17 +30,17 @@ const App = () => {
   useEffect(async () => {
     const response_payload = await api.authenticatedUser();
     // check if meet was unable to get response payload
-    // if(!response_payload) {
-    // meaning that the request payload is undefined, exit the function
-    // return
-    // } else {
-    // there is a response payload from server
-    const { data } = response_payload;
-    if (data) {
-      // set the user object with data from response payload
-      setUser(data.user);
+    if(!response_payload) {
+      // meaning that the request payload is undefined, exit the function
+      return
+    } else {
+      // there is a response payload from server
+      const { data } = response_payload;
+      if (data) {
+        // set the user object with data from response payload
+        setUser(data.user);
+      }
     }
-    // }
   }, []);
 
   return (
@@ -53,12 +53,12 @@ const App = () => {
           {/* <Route path="/signup" component={Signup} /> */}
           <PublicRoutes path="/signin" user={user} component={() => <Signin setUser={setUser} />} />
           {/* <Route path="/signin" component={() => <Signin setUser={setUser} />} /> */}
-
-          <PrivateRoutes path="/user/deposit" user={user} role={[true]} component={() => <Deposit pathname={pathname} setPathname={setPathname} user={user} setUser={setUser} serverMessage={{ server_success_message, set_server_success_message }} />} />
+          
+          <PrivateRoutes path="/user/deposit" user={user} role={[true]} component={() => <Deposit pathname={pathname} setPathname={setPathname} user={user} setUser={setUser} serverMessage={{server_success_message, set_server_success_message}} />} />
           {/* <Route path='/user/deposit' component={() => <Deposit user={user} setUser={setUser} serverMessage={{server_success_message, set_server_success_message}} />} /> */}
-          <PrivateRoutes path='/user/withdraw' user={user} role={[true, false]} component={() => <Withdraw pathname={pathname} setPathname={setPathname} user={user} setUser={setUser} serverMessage={{ server_success_message, set_server_success_message }} />} />
+          <PrivateRoutes path='/user/withdraw' user={user} role={[true, false]} component={() => <Withdraw pathname={pathname} setPathname={setPathname} user={user} setUser={setUser} serverMessage={{server_success_message, set_server_success_message}} />} />
           {/* <Route path='/user/withdraw' component={() => <Withdraw user={user} setUser={setUser} serverMessage={{server_success_message, set_server_success_message}} />} /> */}
-          <PrivateRoutes path='/user/transfer' user={user} role={[true, false]} component={() => <Transfer pathname={pathname} setPathname={setPathname} user={user} setUser={setUser} serverMessage={{ server_success_message, set_server_success_message }} />} />
+          <PrivateRoutes path='/user/transfer' user={user} role={[true, false]} component={() => <Transfer pathname={pathname} setPathname={setPathname} user={user} setUser={setUser} serverMessage={{server_success_message, set_server_success_message}} />} />
           {/* <Route path='/user/Transfer' component={() => <Transfer user={user} setUser={setUser} serverMessage={{server_success_message, set_server_success_message}} />} /> */}
           <PrivateRoutes path='/history/deposits' user={user} role={[true, false]} component={() => <Deposit_history user={user} />} />
           {/* <Route path='/history/deposits' component={() => <Deposit_history user={user} />} /> */}
@@ -66,7 +66,7 @@ const App = () => {
           {/* <Route path='/history/transactions' component={() => <Transaction_history user={user} />} /> */}
           <PrivateRoutes path="/history/withdrawals" user={user} role={[true, false]} component={() => <Withdrawal_history user={user} />} />
           {/* <Route path="/history/withdrawals" component={() => <Withdrawal_history user={user} />} /> */}
-          <PrivateRoutes path="/history/transfers" user={user} role={[true, false]} component={() => <Transfer_history user={user} />} />
+          <PrivateRoutes path="/history/transfers" user={user} role={[true, false]} component={() => <Transfer_history user={user} /> } />
           {/* <Route path="/history/transfers" component={() => <Transfer_history user={user} /> } /> */}
           {/* <Route path="/admin/users/manage" component={() => <Manage_users admin={user} />} /> */}
           <PrivateRoutes path="/admin/users/manage" user={user} role={[true]} component={() => <Manage_users admin={user} />} />

@@ -23,13 +23,12 @@ API.interceptors.response.use(
     // otherwise check if the response is forbidden or unauthentication
     if (error.response.status === 401 || error.response.status === 403) {
       // check if window location is on auth to terminate browser refresh
-      // if(window.location.pathname == "/signin") {
-      //   return
-      // } else {
-      //   // redirect user to sign in screen
-      //     return window.location='/signin';
-      //   }
-      window.location='/signin'
+      if(window.location.pathname == "/signin") {
+        return
+      } else {
+        // redirect user to sign in screen
+          return window.location='/signin';
+        }
     } else {
       return new Promise((resolve, reject)=>{
         reject(error);
