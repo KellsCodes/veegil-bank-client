@@ -29,8 +29,10 @@ const Signin = ({setUser}) => {
         e.preventDefault();
         setSpinner(true);
         setMessage(null);
-        const { data } = await api.signInUser(input_data);
+        const response = await api.signInUser(input_data);
+        console.log(response)
         // check if user login was successful
+        const { data } = response;
         if(data) {
             setSpinner(false);
             if(data.user) {
