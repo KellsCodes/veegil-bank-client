@@ -1,0 +1,30 @@
+.home-set-up {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 98vw;
+    height: 88vh;
+    /* background: red; */
+}
+
+.home-set-up h1 {
+    font-weight: 700;
+    font-size: 2em;
+}
+.home-set-up, h2 {
+    opacity: 0.9;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+@media(max-width: 580px) {
+    .home-set-up {
+        width: 80vw;
+    }
+
+    .homesetup, h1 {
+        font-weight: 500;
+        font-size: 1.2em;
+    }
+}

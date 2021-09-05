@@ -1,0 +1,47 @@
+.withdrawal-form {
+    width: 350px;
+}
+.confirm-box {
+    width: 300px;
+    padding: 5px;
+    border-radius: 3px;
+    position: absolute;
+    top: 45px;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.continue-btn, .close-btn {
+    width: 50px;
+}
+
+.continue-btn{
+    margin-left: 5px;
+}
+
+.close-btn {
+    margin-right: 5px;
+}
+
+.withdraw-btn {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    .withdrawal-form {
+        width: 300px;
+    }
+
+    .confirm-box {
+        right: auto;
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 300px) {
+    .confirm-box {
+        width: calc(100% - 10px);
+        font-size: .7em;
+    }
+}

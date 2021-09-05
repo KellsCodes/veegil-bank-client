@@ -1,0 +1,48 @@
+.sign-in {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+.sign-in-form {
+    background-color: #f5f6f7;
+    border: 1px solid #d7d7d7;
+    padding: 5px 8px;
+    width: 30%;
+    height: 85vh;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+@media (max-width: 500px) {
+    .sign-in-form {
+        width: 100%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 15px;
+    }
+
+    .btn-signin {
+        width: 100%;
+    }
+}
+
+.brand-description {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 86vh;
+    text-align: center;
+    justify-content: center;
+    justify-self: flex-end;
+    /* align-items: center; */
+    background-color: #1b1b32;
+    color: #d7d7d7;
+    margin-right: -9px;
+    margin-top: 0px;
+}
+
+#password_match, .err {
+    color: #dc3545;
+}

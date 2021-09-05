@@ -1,0 +1,22 @@
+.history {
+    display: flex;
+}
+
+.view-deposit-history {
+    margin-left: 20px;
+}
+
+.history-btn {
+    margin-top: 10px;
+}
+
+@media (max-width: 850px) {
+    .history {
+        flex-direction: column;
+    }
+
+    .view-deposit-history {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,22 @@
+.transfer-form {
+    width: 250px;
+}
+
+.transfer-btn {
+    width: 100%;
+}
+
+.btn-group {
+    width: 100%;
+    display: flex;
+    /* align-items: space-between; */
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 500px) {
+    .transfer-form {
+        margin: auto;
+        width: calc(100% - 10px);
+    }
+}
