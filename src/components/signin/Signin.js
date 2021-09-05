@@ -33,6 +33,7 @@ const Signin = ({setUser}) => {
         console.log(response)
         // check if user login was successful
         const { data } = response;
+        console.log(data)
         if(data) {
             setSpinner(false);
             if(data.user) {
