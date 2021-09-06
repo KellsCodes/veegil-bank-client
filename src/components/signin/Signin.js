@@ -30,7 +30,6 @@ const Signin = ({setUser}) => {
         setSpinner(true);
         setMessage(null);
         const response = await api.signInUser(input_data);
-        console.log(response)
         // check if user login was successful
         const { data } = response;
         console.log(data)
@@ -38,7 +37,7 @@ const Signin = ({setUser}) => {
             setSpinner(false);
             if(data.user) {
                 // cookies.set('token', data.token, options);
-                document.cookie = `token_key=${data.token}; path=/`
+                // document.cookie = `token_key=${data.token}; path=/`
                 setUser(data.user);
                 set_input_data(initial_values);
                 history.push("/")
