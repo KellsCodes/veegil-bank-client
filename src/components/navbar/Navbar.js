@@ -30,7 +30,7 @@ const Navbar = ({userProp, setUser}) => {
                     </div>
                     {
                         // check if a user exist to disable sign in button
-                        !userProp ? (<button className='btn btn-primary'><Link to='/signin'>Sign in</Link></button>) : (
+                        !userProp.firstname ? (<button className='btn btn-primary'><Link to='/signin'>Sign in</Link></button>) : (
                             <div className='user-settings'>
                                 <div className='action-area'>
                                     <span>{userProp.firstname[0]}</span>
@@ -43,7 +43,7 @@ const Navbar = ({userProp, setUser}) => {
             </div>
             {
                 // check if a user exists before displaying the action nav links
-                userProp && (
+                (userProp && userProp._id) && (
                     <nav className="navbar navbar-expand-lg navbar-light bg-light nav-color">
                         <div className="container-fluid">
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
