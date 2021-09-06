@@ -31,6 +31,7 @@ const App = () => {
     const response_payload = await api.authenticatedUser();
     // check if meet was unable to get response payload
     if(!response_payload) {
+      console.log(response_payload);
       // meaning that the request payload is undefined, exit the function
       return
     } else {

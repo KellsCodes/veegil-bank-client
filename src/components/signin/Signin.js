@@ -38,7 +38,7 @@ const Signin = ({setUser}) => {
             setSpinner(false);
             if(data.user) {
                 // cookies.set('token', data.token, options);
-                document.cookie = `token_key=${data.token}; path=/`
+                // document.cookie = `token_key=${data.token}; path=/`
                 setUser(data.user);
                 set_input_data(initial_values);
                 history.push("/")
