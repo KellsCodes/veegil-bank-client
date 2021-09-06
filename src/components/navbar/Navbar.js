@@ -30,10 +30,10 @@ const Navbar = ({userProp, setUser}) => {
                     </div>
                     {
                         // check if a user exist to disable sign in button
-                        (userProp && !userProp.firstname) ? (<button className='btn btn-primary'><Link to='/signin'>Sign in</Link></button>) : (
+                        (userProp && !userProp._id) ? (<button className='btn btn-primary'><Link to='/signin'>Sign in</Link></button>) : (
                             <div className='user-settings'>
                                 <div className='action-area'>
-                                    <span>{userProp.firstname[0]}</span>
+                                    <span>{userProp?.firstname[0]}</span>
                                     <button className='btn btn-light' onClick={signOut}>Sign out</button>
                                 </div>
                             </div>
