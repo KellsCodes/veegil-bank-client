@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as api from '../../API/api';
 
 import './style.css';
 
 const Navbar = ({userProp, setUser}) => {
+    const history = useHistory();
     // handle user unauthentication
     const signOut = async () => {
         const { data } = await api.logoutUser();
         if(data.success) {
+            console.log(data.user);
             setUser(data.user)
-            const windowLocation = window.location.reload();  //forces reload on browser to clear cache and store values
+            history.push("/signin");
+            // const windowLocation = window.location.reload();  //forces reload on browser to clear cache and store values
         }
     }
     return (
@@ -22,7 +25,7 @@ const Navbar = ({userProp, setUser}) => {
                         <Link className="home-link" to="/">Home</Link>
                         {
                             // only display balance when a user is authenticated and logged in
-                            userProp && (<span> Balance: &#8358;{userProp.balance}</span>)
+                            (userProp && userProp.balance) && (<span> Balance: &#8358;{userProp.balance}</span>)
                         }
                     </div>
                     {
