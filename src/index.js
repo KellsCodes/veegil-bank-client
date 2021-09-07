@@ -24,6 +24,7 @@ async function validDateUser() {
 }
 
 const userObject = validDateUser();
+if(userObject) console.log(userObject)
 
 ReactDOM.render(
     <App userObject={userObject} />,
