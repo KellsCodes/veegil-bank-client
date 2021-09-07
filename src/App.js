@@ -40,6 +40,7 @@ const App = () => {
       if (data) {
         // set the user object with data from response payload
         setUser(data.user);
+        console.log(document.cookie);
       }
     }
   }, []);
