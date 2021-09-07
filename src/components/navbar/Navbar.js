@@ -11,7 +11,7 @@ const Navbar = ({userProp, setUser}) => {
         const { data } = await api.logoutUser();
         if(data.success) {
             console.log(data.user);
-            setUser(data.user)
+            setUser(null)
             history.push("/signin");
             // const windowLocation = window.location.reload();  //forces reload on browser to clear cache and store values
         }
