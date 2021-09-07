@@ -32,7 +32,6 @@ const Signin = ({setUser}) => {
         const response = await api.signInUser(input_data);
         // check if user login was successful
         const { data } = response;
-        console.log(data)
         if(data) {
             setSpinner(false);
             if(data.user) {
@@ -47,7 +46,6 @@ const Signin = ({setUser}) => {
                 setMessage(data.message);
             }
         }
-        // console.log(input_data);
     }
 
     useEffect(() => {

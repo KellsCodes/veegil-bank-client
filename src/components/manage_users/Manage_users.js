@@ -23,7 +23,6 @@ const Manage_users = ({ admin }) => {
         setSpinner(true);
         setMessage("");
         const { data } = await delete_a_user(currentUserToDelete._id);
-        console.log(data)
         // check if deletion was successful to update client users display
         if (data) {
             setSpinner(false);
@@ -71,7 +70,6 @@ const Manage_users = ({ admin }) => {
         if (data)
             if (!data.message) {
                 setSpinner(false);
-                // console.log(data);
                 setCurrentUsers(data.users);
             }
             else {

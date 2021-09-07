@@ -46,10 +46,6 @@ const Transfer = ({ user, setUser, serverMessage, pathname, setPathname }) => {
         set_message("");
         serverMessage.set_server_success_message("")
         const res = await transfer(data_inputs);
-        if (res.status == 401 || !res) {
-            console.log(res)
-            const windowLocation = window.location.reload();  //forces reload on browser to clear cache and store values
-        }
         const { data } = res;
         if (data) {
             setSpinner(false)
@@ -103,8 +99,6 @@ const Transfer = ({ user, setUser, serverMessage, pathname, setPathname }) => {
             setPathname(history.location.pathname);
         }
     }, []);
-
-    // console.log(active_button);
     return (
         <div className='container-fluid'>
             <h1>Welcome, {user ? `${user.firstname}` : "user"}!</h1>

@@ -14,8 +14,6 @@ const Deposit = ({ user, setUser, serverMessage, pathname, setPathname }) => {
     const [spinner, setSpinner] = useState(false);
     const [self, set_Self] = useState(false);
 
-    console.log(serverMessage.server_success_message);
-
     // handle input field
     const handleInputChange = e => {
         const target = e.target;
@@ -51,7 +49,6 @@ const Deposit = ({ user, setUser, serverMessage, pathname, setPathname }) => {
         // check if transfer was successful
         if (data) {
             setSpinner(false);
-            console.log(data)
             set_success_message(data.message);
             set_data_inputs(initialValues);
             // check if the account number input is correct to return the correct details of user
@@ -63,7 +60,6 @@ const Deposit = ({ user, setUser, serverMessage, pathname, setPathname }) => {
         }
 
     }
-    // console.log(pathname)
 
     useEffect(() => {
             // i want to check if pathname is equal to the pathname receiving and updating message from server

@@ -27,7 +27,7 @@ const Signup = () => {
     const checkProps = ["pledge_accuracy", "admin_user"]
     const uncheck = (checkedProps) => {
         let i = 0;
-        while(i < checkedProps.length) {
+        while (i < checkedProps.length) {
             if (document.getElementById(checkedProps[i]).checked) {
                 document.getElementById(checkedProps[i]).checked = false;
             }
@@ -49,14 +49,13 @@ const Signup = () => {
                 setSpinner(false)
                 set_warning_messsage(data.message);
                 // check the message received if sign up was successful
-                if(data.message === "Signed up successfully") {
+                if (data.message === "Signed up successfully") {
                     setInputData(initialValues);
                     set_activate_submit_button(false);
                     setSignup_success(true);
                     uncheck(checkProps);
                 }
             }
-            // console.log(inputData);
         }
 
     }
@@ -135,7 +134,7 @@ const Signup = () => {
                 <button type="submit" disabled={activate_submit_button ? false : true} className="btn btn-success btn-signup">Sign up</button>
                 {
                     // display error or success messages
-                    warning_message && (<div className={signup_success ? "text-success" : "warning"}>{signup_success ?(<span>{warning_message}. <Link to='/signin'>Please sign in </Link> to continue</span>)  : warning_message}</div>)
+                    warning_message && (<div className={signup_success ? "text-success" : "warning"}>{signup_success ? (<span>{warning_message}. <Link to='/signin'>Please sign in </Link> to continue</span>) : warning_message}</div>)
                 }
                 <br />
                 {

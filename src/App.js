@@ -21,29 +21,12 @@ import PrivateRoutes from './HOC/PrivateRoutes';
 import PublicRoutes from './HOC/PublicRoutes';
 
 
-const App = () => {
-  const [user, setUser] = useState(null);
+const App = ({ userObject }) => {
+  // set user from props if user token still persist
+  const [user, setUser] = useState(userObject && userObject._id ? userObject : null);
   const [server_success_message, set_server_success_message] = useState(null);
   const [pathname, setPathname] = useState(null);
 
-  // component did mount to fetch user if user is signed in with token key;
-  useEffect(async () => {
-    const response_payload = await api.authenticatedUser();
-    // check if meet was unable to get response payload
-    if(!response_payload) {
-      console.log(response_payload);
-      // meaning that the request payload is undefined, exit the function
-      return
-    } else {
-      // there is a response payload from server
-      const { data } = response_payload;
-      if (data) {
-        // set the user object with data from response payload
-        setUser(data.user);
-        console.log(document.cookie);
-      }
-    }
-  }, []);
 
   return (
     <BrowserRouter>

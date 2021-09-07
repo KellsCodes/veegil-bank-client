@@ -23,14 +23,12 @@ const History_action = (props) => {
     // handle form submission
     const handleFormSubmission = async (e) => {
         e.preventDefault();
-        // console.log(props.setHistory)
         setSpinner(true)
         set_message(null);
         // clear input account number from previous input for a user account statement
         if (!toggleBtn) {
             data_inputs.user_account_number = "";
         }
-        // console.log(data_inputs);
         const { data } = await history(data_inputs);
         if (data) {
             setSpinner(false);
