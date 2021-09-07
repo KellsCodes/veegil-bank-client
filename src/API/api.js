@@ -37,7 +37,8 @@ API.interceptors.response.use(
   }
 );
 
-export const logoutUser = () => API.get('/signout');
+// export const logoutUser = () => API.get('/signout'); dev
+export const logoutUser = () => API.get('/signout', {credentials: "include"}); production
 export const signInUser = (formData) => API.post('/signin', formData);
 export const createUser = (formData) => API.post('/signup', formData);
 export const deposit = (formData) => API.post('/deposit', formData);
