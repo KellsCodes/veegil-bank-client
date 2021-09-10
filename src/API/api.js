@@ -3,7 +3,7 @@ import axios from 'axios';
 // "proxy": "http://localhost:5000"
 // create an API instance to make calls to the base url
 // production
-const API = axios.create({ baseURL: "https://veegil-b.herokuapp.com/user", withCredentials: true, });
+const API = axios.create({ baseURL: "https://veegil-b.herokuapp.com/user", withCredentials: true });
 // development
 // const API = axios.create({ baseURL: "http://localhost:5000/user", withCredentials: true, });
 
